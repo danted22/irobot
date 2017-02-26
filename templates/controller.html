@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Robot Controller</title>
+
+<meta name="description" content="iRobot remote control">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="static/styles.css">
+
+</head>
+<body>
+
+	<section class="content">
+
+		<header class="wrap wrap--guttered maxwidth maxwidth--m align--center">
+			<h2 class="margin--none">Robot Controller</h2>
+			<h3 class="text--light">Click the buttons to move the robot</h3>
+		</header>
+
+        <div class="wrap wrap--guttered maxwidth maxwidth--xl">
+
+			<form class="flexform" action="" method="post">
+
+				<button class="margin--s btn btn--s" type="submit" name="button" value="forward"><b>Forward</b></button><br>
+                <button class="margin--s btn btn--s" type="submit" name="button" value="left"><b>Left</b></button><br>
+                <button class="margin--s btn btn--s" type="submit" name="button" value="right"><b>Right</b></button><br>
+                <button class="margin--s btn btn--s" type="submit" name="button" value="backward"><b>Backward</b></button><br>
+
+            </form>
+		
+		</div>
+		
+		<div class="wrap wrap--guttered maxwidth maxwidth--xl">
+		
+		{% if action %}
+            <p>Moving {{ action }}!</p>
+        {% else %}
+            <p>Waiting for button press</p>
+        {% endif %}		
+        
+		</div>
+
+	</section>
+
+</body>
