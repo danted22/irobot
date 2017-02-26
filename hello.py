@@ -1,10 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return 'This is the main page. Try putting your name in after the slash.'
-
 @app.route('/<username>')
-def hello_name(username):
-    return "Hello {}!".format(username)
+def hello_name(username=None):
+    return render_template("hello.html", name=username)
