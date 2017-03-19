@@ -1,6 +1,7 @@
 import robo_api as ra
 from camera import Camera
 from flask import Flask, render_template, request, Response
+
 app = Flask(__name__)
 
 @app.route('/', methods=['POST','GET'])
@@ -23,3 +24,6 @@ def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
     return Response(gen(Camera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80, debug=False, threaded=True)
